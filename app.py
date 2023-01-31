@@ -50,19 +50,20 @@ def get_data():
 def client_data(client_id):
     # Filtre des données sur la base de l'ID client
     df_sample = X[X["SK_ID_CURR"] == int(client_id)]
-    feature_array = np.asarray(df_sample.iloc[0,1:21])
-    # Calculer la prédiction et la probabilité pour le client
-    df_sample["prediction"] = model.predict([feature_array]).tolist()[0]
-    df_sample['proba_1'] = model.predict_proba([feature_array])[:,1].tolist()[0]
-    # Calcul de la feature importance
-    explainer = shap.KernelExplainer(model.predict_proba, X.iloc[:,1:21]) 
-    shap_values = explainer.shap_values(feature_array, l1_reg="aic")
-    # Ajout des SHAP values dans le Dataframe
-    df_sample["expected"] = explainer.expected_value[1]
-    new_line = [99999] + list(shap_values[1]) + [0,0,explainer.expected_value[1]]
-    df_sample.loc[1] = new_line
-    # Creation d'un dictionnaire 
-    sample = df_sample.to_dict("list")
+    # feature_array = np.asarray(df_sample.iloc[0,1:21])
+    # # Calculer la prédiction et la probabilité pour le client
+    # df_sample["prediction"] = model.predict([feature_array]).tolist()[0]
+    # df_sample['proba_1'] = model.predict_proba([feature_array])[:,1].tolist()[0]
+    # # Calcul de la feature importance
+    # explainer = shap.KernelExplainer(model.predict_proba, X.iloc[:,1:21]) 
+    # shap_values = explainer.shap_values(feature_array, l1_reg="aic")
+    # # Ajout des SHAP values dans le Dataframe
+    # df_sample["expected"] = explainer.expected_value[1]
+    # new_line = [99999] + list(shap_values[1]) + [0,0,explainer.expected_value[1]]
+    # df_sample.loc[1] = new_line
+    # # Creation d'un dictionnaire 
+    # sample = df_sample.to_dict("list")
+    df_sample = df_sample.to_dict("list")
     # Retourne la prédiction sous forme d'un fichier json
     return jsonify(sample)
 
