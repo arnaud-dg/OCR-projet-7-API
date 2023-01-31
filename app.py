@@ -64,8 +64,7 @@ def client_data(client_id):
     # Creation d'un dictionnaire 
     sample = df_sample.to_dict("list")
     # Retourne la prédiction sous forme d'un fichier json
-    # return jsonify(sample)
-    return str(client_id)
+    return jsonify(sample)
 
 # A retirer en ligne :
 if __name__ == '__main__':
