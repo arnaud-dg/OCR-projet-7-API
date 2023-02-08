@@ -29,11 +29,11 @@ path = os.path.dirname(os.path.realpath(__file__))
 @app.route('/', methods=['GET'])
 def home():
     return """
-<h1>Projet #7 - Implémentez un modèle de scoring (A.Duigou)</h1>
+<h1>Projet #7 - Implémentez un modèle de scoring (A.Duigou) - 02.2023</h1>
 <p>Cet API va assurer plusieurs rôles:
- - charger les données des clients (pour un groupe de client ou un client seul)
- - charger le modèle de classification et prédire le score d'un client donné
- - produire les shap values pour l'interprétabilité de la prédiction
+charger les données des clients (pour un groupe de client ou un client seul) / 
+charger le modèle de classification et prédire le score d'un client donné / 
+produire les shap values pour l'interprétabilité de la prédiction
  </p>
 """
 
