@@ -40,7 +40,7 @@ produire les shap values pour l'interprétabilité de la prédiction
 # Chargement du modèle optimisé enregistré sous forme binaire/pickle
 modele=pickle.load(open(path + "/model_2.pkl","rb"))
 # Chargement des données test (chargement d'un échantillon uniquement)
-X=pd.read_csv(path + "/data_sample.csv")
+X=pd.read_csv(path + "/data_sample.csv", sep=",")
 
 # -------------------       Affichage ensemble dataset       ---------------------------
 # Création d'une route pour récupérer les données clients
@@ -62,7 +62,7 @@ def client_data(client_id):
     df_short['proba_1']=modele.predict_proba([features])[:,1].tolist()[0] # Prédiction de la probabilité
 
     # Calcul de la feature importance
-    explainer=shap.KernelExplainer(model.predict_proba, X.iloc[:,1:21]) 
+    explainer=shap.KernelExplainer(modele.predict_proba, X.iloc[:,1:21]) 
     shap_values=explainer.shap_values(features, l1_reg="aic")
 
     # Ajout des SHAP values dans le Dataframe
