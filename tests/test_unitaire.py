@@ -26,6 +26,8 @@ import pytest
 #     assert res.status_code == 200
 
 from app import add_numbers
+
+def test_app():
     assert add_numbers(2, 3) == 5
 
 # def test_get_data():
