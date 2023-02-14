@@ -3,8 +3,8 @@
 # Import des librairies
 import pytest
 from app import app
-from app import get_data
-from app import client_data
+# from app import get_data
+# from app import client_data
 import json
 import numpy as np
 import pandas as pd
@@ -12,7 +12,7 @@ import pandas as pd
 # Fonction de test
 def test_get_data():
     """
-    Appel de la fonction client_data (numer "222231") ET
+    Appel de la fonction client_data (numero "222231") ET
     Vérification du contenu du fichier JSON
     """
     response = app.test_client().get('/')
