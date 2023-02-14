@@ -9,6 +9,7 @@
 import os
 import numpy as np
 import pandas as pd
+
 # API Flask + modele
 import flask
 from flask import jsonify
@@ -75,6 +76,9 @@ def client_data(client_id):
 
     # Retourne la prédiction sous forme d'un fichier json
     return jsonify(result)
+
+def add_numbers(a, b):
+    return a + b
 
 # A retirer en ligne :
 if __name__ == '__main__':
