@@ -2,10 +2,11 @@
 
 # Import des librairies
 import pytest
-from app import app
 import flask
 from flask import jsonify
 from flask import request
+from app import home
+# from app import app
 # from app import get_data
 # from app import client_data
 import json
@@ -23,5 +24,6 @@ def test_get_data():
     print(response)
     print(response["BURO_CREDIT_ACTIVE_cat_Active_MEAN"])
     expected = [1.0, -0.061780218046809325]
+    assert "Projet #7" in response
     assert expected == response["BURO_CREDIT_ACTIVE_cat_Active_MEAN"]
     assert response.status_code == 200
