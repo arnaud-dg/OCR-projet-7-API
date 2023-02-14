@@ -15,7 +15,7 @@ def test_get_data():
     Appel de la fonction client_data (numer "222231") ET
     Vérification du contenu du fichier JSON
     """
-    response = app.get_data().get('/data')
+    response = app.test_client().get('/')
     # json.loads("https://api-flask-ocr-projet-7.herokuapp.com/data/client/222231")
     print(response)
     print(response["BURO_CREDIT_ACTIVE_cat_Active_MEAN"])
