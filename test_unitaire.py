@@ -31,3 +31,4 @@ def test_home():
     # URL = "https://api-flask-ocr-projet-7.herokuapp.com/"
     response = app.test_client().get('/')
     assert response.status_code == 200
+    assert "<h1>" in response
