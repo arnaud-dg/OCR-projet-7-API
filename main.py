@@ -77,7 +77,7 @@ def client_data(client_id):
     # Retourne la prédiction sous forme d'un fichier json
     return jsonify(result)
 
-def add_numbers(a, b):
+def add_numbers(a+b):
     return a + b
 
 # A retirer en ligne :

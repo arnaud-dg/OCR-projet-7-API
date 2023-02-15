@@ -4,7 +4,7 @@
 
 # Import des librairies
 import pytest
-from main import sum_numbers
+from main import add_numbers
 from main import app
 # import flask
 # from flask import jsonify
@@ -22,7 +22,7 @@ from main import app
 #     return app.test_client()
 
 def test_main():
-    assert sum_numbers([1, 2, 3]) == 6
+    assert add_numbers(5, 1) == 6
 
 def test_home():
     """
