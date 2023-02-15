@@ -4,7 +4,7 @@
 
 # Import des librairies
 import pytest
-from main import add_numbers
+from main import sum_numbers
 from main import app
 # import flask
 # from flask import jsonify
