@@ -26,20 +26,16 @@ import pytest
 #     assert res.status_code == 200
 
 from main import add_numbers
-from main import home
+from main import app
 
 def test_main():
-    assert add_numbers(2, 3) == 5
+    assert sum_numbers([1, 2, 3]) == 6
 
 def test_home():
     """
     Appel de la fonction gome pour vérifier les informations qui se chargent
     """
     # URL = "https://api-flask-ocr-projet-7.herokuapp.com/"
-    response = main.get('/')
-    print(response)
-    print(response["BURO_CREDIT_ACTIVE_cat_Active_MEAN"])
-    expected = [1.0, -0.061780218046809325]
-    assert "Projet #7" in response
-    assert expected == response["BURO_CREDIT_ACTIVE_cat_Active_MEAN"]
-    assert response.status_code == 200
+    response = app.testt_client().get('/')
+    expected = "<h1>"
+    assert expected in response
