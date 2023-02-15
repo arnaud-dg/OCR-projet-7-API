@@ -25,9 +25,9 @@ import pytest
 #     res = client.get('/data')
 #     assert res.status_code == 200
 
-from app import add_numbers
+from main import add_numbers
 
-def test_app():
+def test_main():
     assert add_numbers(2, 3) == 5
 
 # def test_get_data():
