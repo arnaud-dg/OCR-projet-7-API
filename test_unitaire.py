@@ -36,6 +36,6 @@ def test_home():
     Appel de la fonction gome pour vérifier les informations qui se chargent
     """
     # URL = "https://api-flask-ocr-projet-7.herokuapp.com/"
-    response = app.testt_client().get('/')
+    response = app.test_client().get('/')
     expected = "<h1>"
     assert expected in response
